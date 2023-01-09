@@ -1,0 +1,241 @@
+:root {
+  --background: #062d37;
+  --text: #4d9cb3;
+  --link-text: #40a4bf;
+  --link-text-hover: #062d37;
+  --link-background: #083845;
+  --yellow: #dba549;
+  --banner-background: #073440;
+  --overlay-background: #083845;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Sans-Serif;
+}
+
+/*header start*/
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.6rem 1.6rem -4.5rem;
+  position: sticky;
+  top: 1.6rem;
+  gap: 0;
+  transition: margin, gap, 0.5s ease-in-out;
+  will-change: margin, gap;
+}
+
+header:hover,
+header:focus {
+  margin: 2.6rem;
+  gap: 0.5rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-family: "Courier New", Serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  animation: fadeUp 0.8s ease-in-out 1;
+  transition: color 0.5s ease-in-out;
+  will-change: color;
+}
+
+header h1:hover {
+  color: var(--yellow);
+}
+
+/**navigation**/
+nav {
+  animation: navFade 1s;
+}
+
+nav a {
+  margin: 0 0.5rem;
+}
+/*header end*/
+
+/*banner container start*/
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  padding: 0 5rem;
+  gap: 0;
+  overflow: hidden;
+  background: var(--banner-background);
+  border-radius: 5rem;
+  animation: fadeUp 1s ease-in-out 1;
+  transition: gap 0.5s ease-in-out;
+  will-change: gap;
+}
+
+.banner:hover {
+  gap: 0.25rem;
+}
+
+/**image**/
+.banner img {
+  width: 25rem;
+  height: auto;
+  margin-top: 5.5rem;
+  border-radius: 3rem;
+  animation: fadeUp 1.25s ease-in-out 1;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.banner img:hover {
+  transform: scale(1.025);
+}
+
+/**cta link**/
+a.cta {
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.8rem;
+  padding: 1.4rem 2rem;
+  animation: float 1.5s ease-in-out infinite;
+}
+
+a.cta svg {
+  width: 1.8rem;
+}
+/*banner container end*/
+
+/*generel start*/
+h2 {
+  font-size: 4rem;
+  line-height: 4.5rem;
+  animation: fadeUp 1.5s ease-in-out 1;
+}
+
+h3 {
+  font-family: Serif;
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  letter-spacing: 0.5px;
+}
+
+p {
+  /*line-height: 2.5rem;*/
+  line-height: clamp(2.2rem, 2.5rem, 2.8rem);
+  /*font-size: 1.6rem;*/
+  font-size: clamp(1.2rem, 1.7rem, 2.2rem);
+}
+
+a {
+  display: inline-flex;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  border-radius: 5rem;
+  padding: 1.2rem 1.8rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--link-text);
+  background: var(--link-background);
+  cursor: pointer;
+  transition: color, background, transform, 0.5s ease-in-out;
+  will-change: color, background, transform;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: var(--link-text-hover);
+  background: var(--yellow);
+  transform: scale(1.025);
+}
+/*general end*/
+
+/*overlay start*/
+.overlay {
+  display: flex;
+  flex-direction: column;
+  height: 88vh;
+  width: 100%;
+  position: absolute;
+  top: 94vh;
+  bottom: 0;
+  overflow: auto;
+  border-radius: 5rem 5rem 0 0;
+  background: var(--overlay-background);
+  padding: 3rem 3.8rem;
+  animation: fadeUp 1.5s ease-in-out 1;
+}
+/*overlay end*/
+
+/*keyframes for animations*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.float {
+  animation: float 1.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(3%);
+  }
+  50% {
+    transform: translateY(-9%);
+  }
+  100% {
+    transform: translateY(3%);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navFade {
+  0% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
