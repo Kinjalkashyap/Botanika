@@ -51,7 +51,8 @@ header:focus {
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 3rem; 
+  /* font-size: clamp(2rem, 4rem, 6rem); */
   font-family: "Courier New", Serif;
   font-weight: bold;
   letter-spacing: -1px;
@@ -141,11 +142,12 @@ h3 {
 }
 
 p {
-  /*line-height: 2.5rem;*/
-  line-height: clamp(2.2rem, 2.5rem, 2.8rem);
-  /*font-size: 1.6rem;*/
-  font-size: clamp(1.2rem, 1.7rem, 2.2rem);
+  line-height: 2.8rem;
+  font-size: 1.8rem;
+  /* line-height: clamp(2.2rem, 2.5rem, 2.8rem); */
+  /* font-size: clamp(1.2rem, 1.7rem, 2.2rem); */
 }
+
 
 a {
   display: inline-flex;
@@ -237,5 +239,15 @@ a:active {
 
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header h1 {
+    font-size: 5rem;
+  }
+  p {
+    line-height: 3.2rem;
+    font-size: 2rem;
   }
 }
